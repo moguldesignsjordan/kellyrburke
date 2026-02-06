@@ -82,7 +82,7 @@ function Navbar() {
   }, []);
 
   const navItemStyle = {
-    fontFamily: "'Inter', sans-serif", // Changed font
+    fontFamily: "'Inter', sans-serif",
     fontSize: "0.9rem",
     fontWeight: 600,
     letterSpacing: "0.05em",
@@ -111,7 +111,7 @@ function Navbar() {
             src="/VoteKRb.png" 
             alt="Kelly R. Burke Logo" 
             style={{ 
-              height: 99, // Increased size from 48 to 72
+              height: 99, 
               objectFit: "contain",
             }} 
           />
@@ -131,7 +131,7 @@ function Navbar() {
           <button style={{
             background: THEME.colors.primary,
             color: "white", border: "none", padding: "10px 24px",
-            borderRadius: 50, fontFamily: "'Inter', sans-serif", // Changed font
+            borderRadius: 50, fontFamily: "'Inter', sans-serif",
             fontWeight: 700, fontSize: "0.85rem", letterSpacing: "0.05em",
             textTransform: "uppercase", cursor: "pointer", marginLeft: 16,
             boxShadow: scrolled ? THEME.shadows.md : "none",
@@ -166,7 +166,7 @@ function Navbar() {
           <a key={item} href={`#${item.toLowerCase().replace(" ", "-")}`} 
              onClick={() => setMobileMenu(false)}
              style={{ 
-               color: "white", fontSize: "1.5rem", fontFamily: "'Montserrat', sans-serif", // Changed font
+               color: "white", fontSize: "1.5rem", fontFamily: "'Montserrat', sans-serif", 
                textDecoration: "none", borderBottom: "1px solid rgba(255,255,255,0.1)", paddingBottom: 12
              }}>
             {item}
@@ -223,7 +223,7 @@ function Hero() {
         </div>
 
         <h1 style={{
-          fontFamily: "'Montserrat', sans-serif", fontWeight: 400, // Changed font
+          fontFamily: "'Montserrat', sans-serif", fontWeight: 400,
           fontSize: "clamp(3rem, 6vw, 5.5rem)", lineHeight: 1.05,
           color: "white", margin: "0 0 24px", letterSpacing: "-0.02em",
           opacity: mounted ? 1 : 0, transform: mounted ? "translateY(0)" : "translateY(30px)",
@@ -239,7 +239,7 @@ function Hero() {
         </h1>
 
         <p style={{
-          fontFamily: "'Inter', sans-serif", fontSize: "clamp(1.1rem, 2vw, 1.4rem)", // Changed font
+          fontFamily: "'Inter', sans-serif", fontSize: "clamp(1.1rem, 2vw, 1.4rem)",
           color: "rgba(255,255,255,0.8)", maxWidth: 650, margin: "0 auto 48px", lineHeight: 1.6,
           opacity: mounted ? 1 : 0, transform: mounted ? "translateY(0)" : "translateY(30px)",
           transition: "all 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) 0.2s"
@@ -255,7 +255,7 @@ function Hero() {
           <button style={{
             background: THEME.colors.primary, color: "white",
             padding: "18px 42px", borderRadius: 8, border: "none",
-            fontFamily: "'Inter', sans-serif", fontWeight: 700, fontSize: "1rem", // Changed font
+            fontFamily: "'Inter', sans-serif", fontWeight: 700, fontSize: "1rem",
             textTransform: "uppercase", letterSpacing: "0.05em", cursor: "pointer",
             boxShadow: THEME.shadows.glow, transition: "transform 0.2s"
           }}
@@ -269,7 +269,7 @@ function Hero() {
             background: "transparent", color: "white",
             padding: "18px 42px", borderRadius: 8,
             border: "1px solid rgba(255,255,255,0.3)",
-            fontFamily: "'Inter', sans-serif", fontWeight: 700, fontSize: "1rem", // Changed font
+            fontFamily: "'Inter', sans-serif", fontWeight: 700, fontSize: "1rem",
             textTransform: "uppercase", letterSpacing: "0.05em", cursor: "pointer",
             transition: "background 0.2s"
           }}
@@ -439,30 +439,18 @@ function Platform() {
 
 function Contact() {
   return (
-    <section id="get-involved" style={{ background: THEME.colors.navy, color: "white", padding: "100px 24px", position: "relative", overflow: "hidden" }}>
+    <section id="contact" style={{ background: THEME.colors.navy, color: "white", padding: "100px 24px", position: "relative", overflow: "hidden" }}>
       {/* Background decoration */}
       <div style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%", opacity: 0.05, backgroundImage: "radial-gradient(circle at 70% 20%, white 0%, transparent 60%)" }}></div>
 
       <div style={{ maxWidth: 1000, margin: "0 auto", position: "relative", zIndex: 2, display: "grid", gridTemplateColumns: "1fr 1fr", gap: 64, alignItems: "center" }} className="grid-stack">
         
         <Reveal>
-          <h2 style={{ fontFamily: "'Montserrat', sans-serif", fontWeight: 800, fontSize: "3rem", margin: "0 0 24px" }}>Join the Movement</h2>
+          <h2 style={{ fontFamily: "'Montserrat', sans-serif", fontWeight: 800, fontSize: "3rem", margin: "0 0 24px" }}>Get in Touch</h2>
           <p style={{ fontSize: "1.2rem", opacity: 0.8, marginBottom: 40, lineHeight: 1.6, fontFamily: "'Inter', sans-serif" }}>
-            This campaign is powered by people like you. Sign up to volunteer, request a yard sign, or just stay updated on the latest news.
+            Have a question about the campaign, a concern about our district, or just want to say hello? I'd love to hear from you.
           </p>
           
-          <div style={{ display: "flex", gap: 24, marginBottom: 40, fontFamily: "'Inter', sans-serif" }}>
-             <div>
-                <div style={{ fontSize: "1.5rem", fontWeight: 700, color: THEME.colors.primary, fontFamily: "'Montserrat', sans-serif" }}>$0</div>
-                <div style={{ fontSize: "0.9rem", opacity: 0.6 }}>Corporate Money</div>
-             </div>
-             <div style={{ width: 1, background: "rgba(255,255,255,0.2)" }}></div>
-             <div>
-                <div style={{ fontSize: "1.5rem", fontWeight: 700, color: THEME.colors.primary, fontFamily: "'Montserrat', sans-serif" }}>100%</div>
-                <div style={{ fontSize: "0.9rem", opacity: 0.6 }}>Grassroots</div>
-             </div>
-          </div>
-
           <div style={{ display: "flex", flexDirection: "column", gap: 16, fontFamily: "'Inter', sans-serif" }}>
              <a href="mailto:KBURKEFORARLINGTON@GMAIL.COM" style={{ color: "white", textDecoration: "none", fontSize: "1.1rem", display: "flex", alignItems: "center", gap: 12 }}>
                 <div style={{ width: 40, height: 40, borderRadius: "50%", background: "rgba(255,255,255,0.1)", display: "flex", alignItems: "center", justifyContent: "center" }}>✉️</div>
@@ -477,20 +465,14 @@ function Contact() {
 
         <Reveal delay={0.2}>
           <form style={{ background: "white", padding: 40, borderRadius: 16, color: THEME.colors.navy, fontFamily: "'Inter', sans-serif" }}>
-            <h3 style={{ fontFamily: "'Montserrat', sans-serif", fontWeight: 700, fontSize: "1.8rem", margin: "0 0 24px" }}>Let's stay in touch</h3>
+            <h3 style={{ fontFamily: "'Montserrat', sans-serif", fontWeight: 700, fontSize: "1.8rem", margin: "0 0 24px" }}>Send a Message</h3>
             <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
               <input type="text" placeholder="Full Name" style={{ width: "100%", padding: "16px", borderRadius: 8, border: "1px solid #e2e8f0", fontSize: "1rem", outline: "none", background: "#f8fafc", fontFamily: "inherit" }} />
               <input type="email" placeholder="Email Address" style={{ width: "100%", padding: "16px", borderRadius: 8, border: "1px solid #e2e8f0", fontSize: "1rem", outline: "none", background: "#f8fafc", fontFamily: "inherit" }} />
-              <div style={{ display: "flex", gap: 12 }}>
-                 <label style={{ display: "flex", alignItems: "center", gap: 8, fontSize: "0.9rem", color: THEME.colors.slate600 }}>
-                    <input type="checkbox" /> I want a yard sign
-                 </label>
-                 <label style={{ display: "flex", alignItems: "center", gap: 8, fontSize: "0.9rem", color: THEME.colors.slate600 }}>
-                    <input type="checkbox" /> I can volunteer
-                 </label>
-              </div>
+              <textarea placeholder="How can we help?" rows={4} style={{ width: "100%", padding: "16px", borderRadius: 8, border: "1px solid #e2e8f0", fontSize: "1rem", outline: "none", background: "#f8fafc", fontFamily: "inherit", resize: "vertical" }} />
+              
               <button style={{ background: THEME.colors.primary, color: "white", border: "none", padding: "16px", borderRadius: 8, fontWeight: 700, fontSize: "1rem", cursor: "pointer", marginTop: 8, fontFamily: "inherit" }}>
-                Sign Me Up
+                Send Message
               </button>
             </div>
           </form>

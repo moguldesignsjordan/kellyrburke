@@ -75,6 +75,9 @@ function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenu, setMobileMenu] = useState(false);
 
+  // 🔴 PASTE YOUR DONATION LINK HERE
+  const DONATE_LINK = "https://www.paypal.com/donate/?hosted_button_id=8QK6GVYM5H5MG";
+
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
     window.addEventListener("scroll", handleScroll);
@@ -128,20 +131,35 @@ function Navbar() {
               {item}
             </a>
           ))}
-          <button style={{
-            background: THEME.colors.primary,
-            color: "white", border: "none", padding: "10px 24px",
-            borderRadius: 50, fontFamily: "'Inter', sans-serif",
-            fontWeight: 700, fontSize: "0.85rem", letterSpacing: "0.05em",
-            textTransform: "uppercase", cursor: "pointer", marginLeft: 16,
-            boxShadow: scrolled ? THEME.shadows.md : "none",
-            transition: "transform 0.2s"
-          }}
-          onMouseEnter={e => e.target.style.transform = "translateY(-1px)"}
-          onMouseLeave={e => e.target.style.transform = "translateY(0)"}
+          
+          {/* 🔴 UPDATED: Donate Button (Now an Anchor Tag) */}
+          <a 
+            href={DONATE_LINK}
+            target="_blank" 
+            rel="noopener noreferrer"
+            style={{
+              background: THEME.colors.primary,
+              color: "white", 
+              border: "none", 
+              padding: "10px 24px",
+              borderRadius: 50, 
+              fontFamily: "'Inter', sans-serif",
+              fontWeight: 700, 
+              fontSize: "0.85rem", 
+              letterSpacing: "0.05em",
+              textTransform: "uppercase", 
+              textDecoration: "none", // Removes underline
+              display: "inline-block", // Ensures padding works correctly
+              cursor: "pointer", 
+              marginLeft: 16,
+              boxShadow: scrolled ? THEME.shadows.md : "none",
+              transition: "transform 0.2s"
+            }}
+            onMouseEnter={e => e.target.style.transform = "translateY(-1px)"}
+            onMouseLeave={e => e.target.style.transform = "translateY(0)"}
           >
             Donate
-          </button>
+          </a>
         </div>
 
         {/* Mobile Toggle */}
@@ -162,16 +180,27 @@ function Navbar() {
         padding: "100px 24px", display: "flex", flexDirection: "column", gap: 24,
         animation: "fadeIn 0.2s ease-out"
       }}>
-        {["Meet Kelly", "Priorities", "Get Involved", "Donate"].map(item => (
-          <a key={item} href={`#${item.toLowerCase().replace(" ", "-")}`} 
-             onClick={() => setMobileMenu(false)}
-             style={{ 
-               color: "white", fontSize: "1.5rem", fontFamily: "'Montserrat', sans-serif", 
-               textDecoration: "none", borderBottom: "1px solid rgba(255,255,255,0.1)", paddingBottom: 12
-             }}>
-            {item}
-          </a>
-        ))}
+        {["Meet Kelly", "Priorities", "Get Involved", "Donate"].map(item => {
+          // 🔴 UPDATED: Logic to handle Donate link vs Internal links
+          const linkHref = item === "Donate" 
+            ? DONATE_LINK 
+            : `#${item.toLowerCase().replace(" ", "-")}`;
+
+          return (
+            <a key={item} 
+               href={linkHref}
+               // Add target blank if it is the donate link
+               target={item === "Donate" ? "_blank" : "_self"}
+               rel={item === "Donate" ? "noopener noreferrer" : ""}
+               onClick={() => setMobileMenu(false)}
+               style={{ 
+                 color: "white", fontSize: "1.5rem", fontFamily: "'Montserrat', sans-serif", 
+                 textDecoration: "none", borderBottom: "1px solid rgba(255,255,255,0.1)", paddingBottom: 12
+               }}>
+              {item}
+            </a>
+          );
+        })}
       </div>
     )}
 
@@ -187,6 +216,7 @@ function Navbar() {
     </>
   );
 }
+
 
 function Hero() {
   const [mounted, setMounted] = useState(false);

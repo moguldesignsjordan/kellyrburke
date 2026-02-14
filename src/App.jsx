@@ -364,7 +364,7 @@ function About() {
           <div style={{ height: 4, width: 80, background: THEME.colors.primary, marginBottom: 32 }}></div>
           
           <p style={{ fontFamily: "'Inter', sans-serif", fontSize: "1.1rem", lineHeight: 1.8, color: THEME.colors.slate600, marginBottom: 24 }}>
-            As a grassroots small business owner and devoted father, I see the challenges our district faces every day. From traffic safety near our schools to the need for sustainable local growth, the issues aren't just political—they are personal.
+            As a grassroots small business owner and devoted father, I see the challenges our district faces every day. From traffic safety near our schools to the need for sustainable local growth, the issues aren't just political they are personal.
           </p>
           <p style={{ fontFamily: "'Inter', sans-serif", fontSize: "1.1rem", lineHeight: 1.8, color: THEME.colors.slate600, marginBottom: 32 }}>
             I am running to bring common-sense leadership back to City Hall. I believe in listening before acting and ensuring every tax dollar is spent with purpose.

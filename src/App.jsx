@@ -220,7 +220,11 @@ function Navbar() {
 
 function Hero() {
   const [mounted, setMounted] = useState(false);
-  useEffect(() => setMounted(true), []);
+  useEffect(() => {
+    // Next frame, so the hidden state paints first and the entrance transition runs.
+    const id = requestAnimationFrame(() => setMounted(true));
+    return () => cancelAnimationFrame(id);
+  }, []);
 
   return (
     <header style={{
